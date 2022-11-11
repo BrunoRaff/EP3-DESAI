@@ -15,24 +15,36 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping("/añadir")
-    public void addCliente(@RequestBody Cliente cliente){
-        clienteService.addCliente(cliente);
+    public String addCliente(@RequestBody Cliente cliente){
+       return clienteService.addCliente(cliente);
     }
 
     @PostMapping("/actualizar")
-    public void updateCliente(@RequestParam String email, @RequestBody Cliente cliente){
-        clienteService.updateCliente(cliente,email);
+    public String updateCliente(@RequestParam String email, @RequestBody Cliente cliente){
+        return clienteService.updateCliente(cliente,email);
     }
 
-    @GetMapping("/eliminar")
+    @PostMapping("/eliminar")
     public void deleteCliente(@RequestParam String email){
+        System.out.println(email);
         clienteService.deleteCliente(email);
     }
 
     @GetMapping({"/","/listar"})
-    public List<Cliente> getAllItems(){
+    public List<Cliente> getAll(){
         return clienteService.getAllClientes();
     }
 
-    //------------Codigo--------------
+
+    @GetMapping("/getByEmail")
+    public Cliente getByEmail(@RequestParam String email){
+        return clienteService.getClienteByEmail(email);
+    }
+/*
+    @GetMapping("/getByCiudad")
+    public List<Cliente> getByCiudad(@RequestParam String direccion1){
+
+        return clienteService.getByCiudad(direccion1);
+    }*/
+
 }

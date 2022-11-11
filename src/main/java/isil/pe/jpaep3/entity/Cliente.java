@@ -23,7 +23,6 @@ public class Cliente {
     private Direccion direccion;
 
     private Date fchaCreacion;
-
     private String usuCreacion;
 
     @PostPersist

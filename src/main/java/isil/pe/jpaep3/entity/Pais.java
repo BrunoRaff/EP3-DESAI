@@ -18,6 +18,7 @@ public class Pais {
 
     @PostPersist
     public void postPersistFcha(){
+
         this.fchaCreacion=new Date();
     }
 
