@@ -19,14 +19,13 @@ public class ClienteController {
        return clienteService.addCliente(cliente);
     }
 
-    @PostMapping("/actualizar")
-    public String updateCliente(@RequestParam String email, @RequestBody Cliente cliente){
-        return clienteService.updateCliente(cliente,email);
+    @PutMapping("/actualizar/{email}")
+    public String updateCliente(@PathVariable String email, @RequestBody Cliente cliente){
+        return clienteService.updateCliente(cliente, email);
     }
 
-    @PostMapping("/eliminar")
-    public void deleteCliente(@RequestParam String email){
-        System.out.println(email);
+    @DeleteMapping("/eliminar/{email}")
+    public void deleteCliente(@PathVariable String email){
         clienteService.deleteCliente(email);
     }
 
