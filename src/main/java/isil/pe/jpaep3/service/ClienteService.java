@@ -70,6 +70,12 @@ public class ClienteService {
             }
         }
 
+        public List<Cliente> getByCiudad(String descripcion){
+
+            return clienteRepository.findClienteByCiudad(descripcion);
+        }
+
+
 
         /*public List<Cliente> getByCiudad(String nombres) {
 

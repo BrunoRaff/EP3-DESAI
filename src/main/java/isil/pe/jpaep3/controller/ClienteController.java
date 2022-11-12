@@ -40,6 +40,14 @@ public class ClienteController {
     public Cliente getByEmail(@RequestParam String email){
         return clienteService.getClienteByEmail(email);
     }
+
+    @GetMapping("/getByCiudad")
+    public List<Cliente> getByCiudad(@RequestParam String descripcion) {
+
+        return clienteService.getByCiudad(descripcion);
+
+    }
+
 /*
     @GetMapping("/getByCiudad")
     public List<Cliente> getByCiudad(@RequestParam String direccion1){
