@@ -47,14 +47,11 @@ public class ClienteService {
             return clienteRepository.findAll();
         }
 
-        public String deleteCliente( String email){
+        public void deleteCliente( String email){
             Cliente clienteToDelete = clienteRepository.findClienteByEmail(email);
 
             if(getClienteByEmail(clienteToDelete.getEmail()) != null){
                 clienteRepository.delete(clienteToDelete);
-                return "Cliente Eliminado";
-            } else {
-                return "No se puede eliminar cliente";
             }
 
         }
