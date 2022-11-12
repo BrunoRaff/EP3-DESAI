@@ -16,8 +16,8 @@ public class DireccionController {
     private DireccionService direccionService;
 
     @PostMapping("/añadir")
-    public String addDireccion(@RequestBody Direccion direccion){
-        return direccionService.addDireccion(direccion);
+    public String addDireccion(@RequestParam(name = "idCity") Long cityId, @RequestParam(name = "idCountry") Long countryId, @RequestBody Direccion direccion){
+        return direccionService.addDireccion(direccion, cityId, countryId);
     }
 
     @GetMapping({"/","/listar"})
