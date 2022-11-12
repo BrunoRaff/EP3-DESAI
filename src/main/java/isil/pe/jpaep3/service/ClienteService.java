@@ -34,6 +34,7 @@ public class ClienteService {
                 clienteToUpdate.setApellidos(cliente.getApellidos() != null ? cliente.getApellidos(): clienteToUpdate.getApellidos());
                 clienteToUpdate.setEmail(cliente.getEmail() != null ? cliente.getEmail(): clienteToUpdate.getEmail());
                 clienteToUpdate.setDireccion(cliente.getDireccion() != null ? cliente.getDireccion(): clienteToUpdate.getDireccion());
+                clienteToUpdate.setUsuCreacion(cliente.getUsuCreacion() != null ? cliente.getUsuCreacion(): clienteToUpdate.getUsuCreacion());
 
                 clienteRepository.save(clienteToUpdate);
                 return "Actualizacion exitosa";

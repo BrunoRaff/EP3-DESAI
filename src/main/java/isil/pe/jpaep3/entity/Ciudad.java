@@ -11,7 +11,7 @@ public class Ciudad {
     private Long id;
 
     private String descripcion;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "id_pais")
     private Pais pais;
 
