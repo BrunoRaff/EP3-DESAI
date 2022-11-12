@@ -43,16 +43,10 @@ public class ClienteController {
 
     @GetMapping("/getByCiudad")
     public List<Cliente> getByCiudad(@RequestParam String descripcion) {
-
         return clienteService.getByCiudad(descripcion);
-
     }
-
-/*
-    @GetMapping("/getByCiudad")
-    public List<Cliente> getByCiudad(@RequestParam String direccion1){
-
-        return clienteService.getByCiudad(direccion1);
-    }*/
-
+    @GetMapping("/getByPais")
+    public List<Cliente> getByPais(@RequestParam String descripcion) {
+        return clienteService.getByPais(descripcion);
+    }
 }

@@ -75,17 +75,8 @@ public class ClienteService {
             return clienteRepository.findClienteByCiudad(descripcion);
         }
 
+        public List<Cliente> getByPais(String descripcion){
 
-
-        /*public List<Cliente> getByCiudad(String nombres) {
-
-            return clienteRepository.findClienteByNombres(nombres);
-        }*/
-
-
-
-
-        //------------Codigo--------------
-
-
+        return clienteRepository.findClienteByPais(descripcion);
+        }
     }

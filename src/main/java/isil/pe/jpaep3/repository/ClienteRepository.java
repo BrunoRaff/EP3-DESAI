@@ -17,14 +17,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query("SELECT c FROM Cliente c INNER JOIN Direccion d ON c.direccion = d.id  INNER JOIN Ciudad ci ON d.ciudad = ci.id WHERE ci.descripcion = :descripcion")
     List<Cliente> findClienteByCiudad(@Param("descripcion") String descripcion);
 
-/*
-    List<Cliente> findClienteByNombres(String nombres);
-
-   // List<Cliente> findByDireccion(String direccion1);
-
-   // Cliente findClienteByPais(String pais);
-*/
-
-    //------------Codigo--------------
-
+    @Query("SELECT c FROM Cliente c INNER JOIN Direccion d ON c.direccion = d.id  INNER JOIN Pais pa ON d.pais = pa.id WHERE pa.descripcion = :descripcion")
+    List<Cliente> findClienteByPais(@Param("descripcion") String descripcion);
 }
