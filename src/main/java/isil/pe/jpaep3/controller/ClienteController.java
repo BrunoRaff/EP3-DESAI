@@ -42,13 +42,13 @@ public class ClienteController {
         return clienteService.getClienteByEmail(email);
     }
 
-    @GetMapping("/getByDireccionCiudad")
-    public List<Cliente> getByDireccionCiudad(@RequestParam String ciudad) {
-        return clienteService.getByDireccionCiudad(ciudad);
+    @GetMapping("/getByCiudad")
+    public List<Cliente> getByDireccionCiudad(@RequestParam String descripcion) {
+        return clienteService.getByDireccionCiudad(descripcion);
     }
 
-    @GetMapping("/getByDireccionPais")
-    public List<Cliente> getByDireccionPais (@RequestParam String pais) {
-        return clienteService.getByDireccionPais(pais);
+    @GetMapping("/getByPais")
+    public List<Cliente> getByDireccionPais (@RequestParam String descripcion) {
+        return clienteService.getByDireccionPais(descripcion);
     }
 }
