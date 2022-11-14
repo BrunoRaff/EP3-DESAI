@@ -1,6 +1,8 @@
 package isil.pe.jpaep3.controller;
 
+import isil.pe.jpaep3.entity.Ciudad;
 import isil.pe.jpaep3.entity.Cliente;
+import isil.pe.jpaep3.entity.Pais;
 import isil.pe.jpaep3.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,12 +42,13 @@ public class ClienteController {
         return clienteService.getClienteByEmail(email);
     }
 
-    @GetMapping("/getByCiudad")
-    public List<Cliente> getByCiudad(@RequestParam String descripcion) {
-        return clienteService.getByCiudad(descripcion);
+    @GetMapping("/getByDireccionCiudad")
+    public List<Cliente> getByDireccionCiudad(@RequestParam String ciudad) {
+        return clienteService.getByDireccionCiudad(ciudad);
     }
-    @GetMapping("/getByPais")
-    public List<Cliente> getByPais(@RequestParam String descripcion) {
-        return clienteService.getByPais(descripcion);
+
+    @GetMapping("/getByDireccionPais")
+    public List<Cliente> getByDireccionPais (@RequestParam String pais) {
+        return clienteService.getByDireccionPais(pais);
     }
 }

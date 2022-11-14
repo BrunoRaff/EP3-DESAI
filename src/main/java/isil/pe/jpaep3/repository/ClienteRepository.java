@@ -1,7 +1,9 @@
 package isil.pe.jpaep3.repository;
 
+import isil.pe.jpaep3.entity.Ciudad;
 import isil.pe.jpaep3.entity.Cliente;
 import isil.pe.jpaep3.entity.Direccion;
+import isil.pe.jpaep3.entity.Pais;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,9 +16,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     Cliente findClienteByEmail(String email);
 
-    @Query("SELECT c FROM Cliente c INNER JOIN Direccion d ON c.direccion = d.id  INNER JOIN Ciudad ci ON d.ciudad = ci.id WHERE ci.descripcion = :descripcion")
-    List<Cliente> findClienteByCiudad(@Param("descripcion") String descripcion);
+    List<Cliente> findClienteByDireccionCiudadDescripcion(@Param("descripcion") String descripcion);
 
-    @Query("SELECT c FROM Cliente c INNER JOIN Direccion d ON c.direccion = d.id  INNER JOIN Pais pa ON d.pais = pa.id WHERE pa.descripcion = :descripcion")
-    List<Cliente> findClienteByPais(@Param("descripcion") String descripcion);
+    List<Cliente> findClienteByDireccionPaisDescripcion(@Param("descripcion") String descripcion);
 }
